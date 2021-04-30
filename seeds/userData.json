@@ -1,17 +1,39 @@
 [
   {
-    "name": "Sal",
-    "email": "sal@hotmail.com",
-    "password": "password12345"
+    "id": 1,
+    "first_name": "Test",
+    "last_name": "User",
+    "username": "test_username",
+    "email": 
+      {
+        "address": "testuser1@gmail.com",
+        "is_confirmed": true
+      },
+    "password": "testPassword1",
+    "wishlist_keys": [1, 2]
   },
   {
-    "name": "Lernantino",
-    "email": "lernantino@gmail.com",
-    "password": "password12345"
+    "id": 2,
+    "first_name": "Test",
+    "last_name": "User2",
+    "email": 
+      {
+        "address": "testuser2@gmail.com",
+        "is_confirmed": true
+      },
+    "password": "testPassword2",
+    "wishlist_keys": [3]
   },
   {
-    "name": "Amiko",
-    "email": "amiko2k20@aol.com",
-    "password": "password12345"
+    "id": 3,
+    "first_name": "Test",
+    "last_name": "User3",
+    "email": 
+      {
+        "address": "testuser3@gmail.com",
+        "is_confirmed": true
+      },
+    "password": "testPassword3",
+    "wishlist_keys": []
   }
 ]
