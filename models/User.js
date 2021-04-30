@@ -27,7 +27,7 @@ User.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
+      unique: true,
     },
     email: {
       type: DataTypes.STRING,
@@ -36,6 +36,11 @@ User.init(
       validate: {
         isEmail: true,
       },
+    },
+    is_verified: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
     },
     password: {
       type: DataTypes.STRING,

@@ -4,54 +4,6 @@
     "user_id": 1,
     "is_private": false,
     "name": "Test Wishlist",
-    "description": "A test description for a test wishlist.",
-    "products": [
-      {
-        "id": 1,
-        "name": "Test Product",
-        "link": "https://amazon.com",
-        "image": "https://picsum.photos/200",
-        "quantity": 1
-      },
-      {
-        "id": 2,
-        "name": "Test Product",
-        "link": "https://amazon.com",
-        "image": "https://picsum.photos/200",
-        "quantity": 5
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "user_id": 1,
-    "is_private": false,
-    "name": "Test Wishlist 2",
-    "description": "A test description for a test wishlist.",
-    "products": [
-      {
-        "id": 1,
-        "name": "Test Product",
-        "link": "https://amazon.com",
-        "image": "https://picsum.photos/200",
-        "quantity": 1
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "user_id": 2,
-    "is_private": false,
-    "name": "Test Wishlist 3",
-    "description": "A test description for a test wishlist.",
-    "products": [
-      {
-        "id": 1,
-        "name": "Test Product",
-        "link": "https://amazon.com",
-        "image": "https://picsum.photos/200",
-        "quantity": 1
-      }
-    ]
+    "description": "A test description for a test wishlist."
   }
 ]

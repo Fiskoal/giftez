@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "name": "Test Product",
+    "link": "https://amazon.com",
+    "image": "https://picsum.photos/200",
+    "quantity": 1
+  }
+]

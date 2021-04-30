@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Wishlist extends Model {}
+class Product extends Model {}
 
-Wishlist.init(
+Product.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -17,27 +17,40 @@ Wishlist.init(
         model: 'user',
         key: 'id',
       },
-    },
-    is_private: {
-      type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: false,
+    },
+    wishlist_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'wishlist',
+        key: 'id',
+      },
+      allowNull: false,
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    amazon_link: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
+    image_link: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'wishlist',
+    modelName: 'product',
   }
 );
 
-module.exports = Wishlist;
+module.exports = Product;

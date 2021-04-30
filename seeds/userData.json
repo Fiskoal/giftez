@@ -4,36 +4,8 @@
     "first_name": "Test",
     "last_name": "User",
     "username": "test_username",
-    "email": 
-      {
-        "address": "testuser1@gmail.com",
-        "is_confirmed": true
-      },
-    "password": "testPassword1",
-    "wishlist_keys": [1, 2]
-  },
-  {
-    "id": 2,
-    "first_name": "Test",
-    "last_name": "User2",
-    "email": 
-      {
-        "address": "testuser2@gmail.com",
-        "is_confirmed": true
-      },
-    "password": "testPassword2",
-    "wishlist_keys": [3]
-  },
-  {
-    "id": 3,
-    "first_name": "Test",
-    "last_name": "User3",
-    "email": 
-      {
-        "address": "testuser3@gmail.com",
-        "is_confirmed": true
-      },
-    "password": "testPassword3",
-    "wishlist_keys": []
+    "email": "testuser1@gmail.com",
+    "is_verified": true, 
+    "password": "testPassword1"
   }
 ]
