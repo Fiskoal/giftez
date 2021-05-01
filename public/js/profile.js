@@ -45,3 +45,6 @@ document
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
+
+
+// TODO: CHECK ALL ROUTES AND ID TAGS, MAKE SURE THEY STILL MATCH

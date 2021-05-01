@@ -27,17 +27,17 @@
     </form>
   </div>
 
-  {{#if projects.length}}
+  {{#if wishlists.length}}
   <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+    <h3>Current Wishlists:</h3>
 
-    {{#each projects as |project|}}
+    {{#each wishlists as |wishlist|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/wishlist/{{wishlist.id}}">{{wishlist.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{wishlist.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}

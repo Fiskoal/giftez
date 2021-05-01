@@ -6,6 +6,6 @@
     "username": "test_username",
     "email": "testuser1@gmail.com",
     "is_verified": true, 
-    "password": "testPassword1"
+    "password": "testPass1"
   }
 ]
