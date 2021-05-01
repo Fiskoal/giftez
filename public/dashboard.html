@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GiftEZ</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link href="./css/tailwind.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body
+    class="h-screen overflow-hidden flex items-center justify-center"
+    style="background: #edf2f7"
+  >
+    <div class="w-full">
+      <script
+        src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+        defer
+      ></script>
+
+      <div class="flex h-screen bg-gray-200">
+        <!-- <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
+                class="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
+                <div class="flex items-center justify-center mt-8">
+                    <div class="flex items-center">
+                        <span class="text-white text-2xl mx-2 font-semibold">Dashboard</span>
+                    </div>
+                </div>
+
+                <nav class="mt-10">
+                    <a class="flex items-center mt-4 py-2 px-6 bg-gray-700 bg-opacity-25 text-gray-100" href="/">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                        </svg>
+
+                        <span class="mx-3">Dashboard</span>
+                    </a>
+
+                    <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                        href="/ui-elements">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z">
+                            </path>
+                        </svg>
+
+                        <span class="mx-3">UI Elements</span>
+                    </a>
+
+                    <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                        href="/tables">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg>
+
+                        <span class="mx-3">Tables</span>
+                    </a>
+
+                    <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                        href="/forms">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                            </path>
+                        </svg>
+
+                        <span class="mx-3">Forms</span>
+                    </a>
+                </nav>
+            </div> -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+          <!-- <header class="flex justify-between items-center py-4 px-6 bg-white border-b-4 border-indigo-600">
+          <div class="flex items-center">
+            <div class="relative mx-4 lg:mx-0">TEST</div>
+          </div>
+        </header> -->
+
+          <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
+            <div class="container mx-auto px-6 py-8">
+              <div class="">
+                <div class="flex justify-end w-full mb-12">
+                  <label for="toggleB" class="flex items-center cursor-pointer">
+                    <div class="relative">
+                      <input type="checkbox" id="toggleB" class="sr-only" />
+                      <div
+                        class="block bg-gray-600 w-14 h-8 rounded-full"
+                      ></div>
+                      <div
+                        class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"
+                      ></div>
+                    </div>
+                    <div class="ml-3 text-gray-700 font-medium">Darkmode</div>
+                  </label>
+                </div>
+                <h3 class="flex text-gray-700 text-3xl font-medium">
+                  Welcome, Username!
+                </h3>
+                <hr class="w-100 h-2 my-10 bg-gray-400 rounded-full" />
+              </div>
+
+              <div class="mt-4">
+                <div class="flex flex-wrap -mx-6">
+                  <div class="w-full px-6 sm:w-1/2 xl:w-1/3">
+                    <div
+                      class="flex items-center justify-center text-center px-5 py-6 shadow-sm rounded-md bg-white"
+                    >
+                      <div class="mx-5">
+                        <h4
+                          class="text-2xl font-semibold text-center text-gray-700"
+                        >
+                          2
+                        </h4>
+                        <h4
+                          class="text-xl font-semibold text-center text-gray-500"
+                        >
+                          Wish Lists
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 sm:mt-0">
+                    <div
+                      class="flex items-center justify-center px-5 py-6 shadow-sm rounded-md bg-white"
+                    >
+                      <div class="mx-5">
+                        <h4
+                          class="text-2xl font-semibold text-center text-gray-700"
+                        >
+                          54
+                        </h4>
+                        <h4
+                          class="text-xl font-semibold text-center text-gray-500"
+                        >
+                          Total Items
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
+                    <div
+                      class="flex items-center justify-center px-5 py-6 shadow-sm rounded-md bg-white"
+                    >
+                      <div class="mx-5">
+                        <h4
+                          class="text-2xl font-semibold text-center text-gray-700"
+                        >
+                          5
+                        </h4>
+                        <h4
+                          class="text-xl font-semibold text-center text-gray-500"
+                        >
+                          Items Purchased
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+                  <div class="inline-flex rounded-md shadow">
+                    <a
+                      href="#"
+                      class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+                    >
+                      List Name 1
+                    </a>
+                  </div>
+                  <div class="ml-3 inline-flex rounded-md shadow">
+                    <a
+                      href="#"
+                      class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+                    >
+                      List Name 2
+                    </a>
+                  </div>
+                </div>
+
+                <div class="mt-10 flex justify-end">
+                  <div class="ml-3 inline-flex rounded-md shadow">
+                    <a
+                      href="#"
+                      class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+                    >
+                      <i class="far fa-envelope fa-lg"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col mt-8">
+                <div
+                  class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+                >
+                  <div
+                    class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200"
+                  >
+                    <table class="min-w-full">
+                      <thead>
+                        <tr>
+                          <th
+                            class="px-6 py-3 font-bold border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                          >
+                            Image
+                          </th>
+                          <th
+                            class="px-6 py-3 font-bold border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                          >
+                            Item
+                          </th>
+                          <th
+                            class="px-6 py-3 font-bold border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                          >
+                            Status
+                          </th>
+                          <th
+                            class="px-6 py-3 font-bold border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                          >
+                            Price
+                          </th>
+                          <th
+                            class="mx-auto font-bold text-center py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                          >
+                            Quantity
+                          </th>
+                          <th
+                            class="mx-auto font-bold text-center py-3 border-b border-gray-200 bg-gray-50"
+                          ></th>
+                        </tr>
+                      </thead>
+
+                      <tbody class="bg-white">
+                        <tr>
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                          >
+                            <div class="flex items-center justify-center">
+                              <div class="flex-shrink-0 h-20 w-20">
+                                <a
+                                  href="https://www.amazon.com/Keurig-K55-K-Classic-Coffee-Programmable/dp/B018UQ5AMS/ref=sr_1_14?dchild=1&keywords=coffee+maker&qid=1619879168&sr=8-14"
+                                  target="_blank"
+                                  ><img
+                                    class="h-20 w-100"
+                                    src="https://images-na.ssl-images-amazon.com/images/I/71Ikuq6AAfL._AC_SY606_.jpg"
+                                    alt=""
+                                /></a>
+                              </div>
+                            </div>
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                          >
+                            <div
+                              class="text-sm leading-5 text-gray-900 lg:break-all md:break-all sm:break-words xs:break-words"
+                            >
+                              Keurig K-Classic Coffee Maker
+                            </div>
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                          >
+                            <span
+                              class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800"
+                              >Purchased</span
+                            >
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500"
+                          >
+                            $98.00
+                          </td>
+
+                          <td
+                            class="mx-auto text-center py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500"
+                          >
+                            1
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap text-center border-b border-gray-200 text-sm leading-5 font-medium"
+                          >
+                            <a
+                              href="#"
+                              class="text-indigo-600 hover:text-indigo-900"
+                              >Edit</a
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                          >
+                            <div class="flex items-center justify-center">
+                              <div class="flex-shrink-0 h-20 w-20">
+                                <a
+                                  href="https://www.amazon.com/HORLIMER-Glass-Clear-Coffee-Cappuccino/dp/B08GRZBYN5/ref=sxin_10_trfob_0?cv_ct_cx=coffee+cups&dchild=1&keywords=coffee+cups&pd_rd_i=B08GRZBYN5&pd_rd_r=4f3f27e6-5d57-42c9-bdc7-113470aa89ce&pd_rd_w=6KTWE&pd_rd_wg=WXPdq&pf_rd_p=6c6f0ed1-2306-4f6f-832e-d796b7d41a25&pf_rd_r=WTS47MQRN4GJWRVK27YG&qid=1619880321&sr=1-1-fcc74f9e-0165-48d2-a9e1-f41ea92a035c"
+                                  target="_blank"
+                                  ><img
+                                    class="h-20 w-100"
+                                    src="https://images-na.ssl-images-amazon.com/images/I/614%2BpmhUlSS._AC_SL1500_.jpg"
+                                    alt=""
+                                /></a>
+                              </div>
+                            </div>
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                          >
+                            <div
+                              class="text-sm leading-5 text-gray-900 lg:break-all md:break-all sm:break-words xs:break-words"
+                            >
+                              16 oz Clear Coffee Mug Set of 6
+                            </div>
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                          >
+                            <span
+                              class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
+                              >Available</span
+                            >
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500"
+                          >
+                            $24.99
+                          </td>
+
+                          <td
+                            class="mx-auto text-center py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500"
+                          >
+                            2
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap text-center border-b border-gray-200 text-sm leading-5 font-medium"
+                          >
+                            <a
+                              href="#"
+                              class="text-indigo-600 hover:text-indigo-900"
+                              >Edit</a
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                          >
+                            <div class="flex items-center justify-center">
+                              <div class="flex-shrink-0 h-20 w-20">
+                                <a
+                                  href="https://www.amazon.com/HORLIMER-Glass-Clear-Coffee-Cappuccino/dp/B08GRZBYN5/ref=sxin_10_trfob_0?cv_ct_cx=coffee+cups&dchild=1&keywords=coffee+cups&pd_rd_i=B08GRZBYN5&pd_rd_r=4f3f27e6-5d57-42c9-bdc7-113470aa89ce&pd_rd_w=6KTWE&pd_rd_wg=WXPdq&pf_rd_p=6c6f0ed1-2306-4f6f-832e-d796b7d41a25&pf_rd_r=WTS47MQRN4GJWRVK27YG&qid=1619880321&sr=1-1-fcc74f9e-0165-48d2-a9e1-f41ea92a035c"
+                                  target="_blank"
+                                  ><img
+                                    class="h-20 w-100"
+                                    src="https://images-na.ssl-images-amazon.com/images/I/614%2BpmhUlSS._AC_SL1500_.jpg"
+                                    alt=""
+                                /></a>
+                              </div>
+                            </div>
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                          >
+                            <div
+                              class="text-sm leading-5 text-gray-900 lg:break-all md:break-all sm:break-words xs:break-words"
+                            >
+                              16 oz Clear Coffee Mug Set of 6
+                            </div>
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                          >
+                            <span
+                              class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
+                              >Available</span
+                            >
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500"
+                          >
+                            $24.99
+                          </td>
+
+                          <td
+                            class="mx-auto text-center py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500"
+                          >
+                            2
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap text-center border-b border-gray-200 text-sm leading-5 font-medium"
+                          >
+                            <a
+                              href="#"
+                              class="text-indigo-600 hover:text-indigo-900"
+                              >Edit</a
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                          >
+                            <div class="flex items-center justify-center">
+                              <div class="flex-shrink-0 h-20 w-20">
+                                <a
+                                  href="https://www.amazon.com/HORLIMER-Glass-Clear-Coffee-Cappuccino/dp/B08GRZBYN5/ref=sxin_10_trfob_0?cv_ct_cx=coffee+cups&dchild=1&keywords=coffee+cups&pd_rd_i=B08GRZBYN5&pd_rd_r=4f3f27e6-5d57-42c9-bdc7-113470aa89ce&pd_rd_w=6KTWE&pd_rd_wg=WXPdq&pf_rd_p=6c6f0ed1-2306-4f6f-832e-d796b7d41a25&pf_rd_r=WTS47MQRN4GJWRVK27YG&qid=1619880321&sr=1-1-fcc74f9e-0165-48d2-a9e1-f41ea92a035c"
+                                  target="_blank"
+                                  ><img
+                                    class="h-20 w-100"
+                                    src="https://images-na.ssl-images-amazon.com/images/I/614%2BpmhUlSS._AC_SL1500_.jpg"
+                                    alt=""
+                                /></a>
+                              </div>
+                            </div>
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                          >
+                            <div
+                              class="text-sm leading-5 text-gray-900 lg:break-all md:break-all sm:break-words xs:break-words"
+                            >
+                              16 oz Clear Coffee Mug Set of 6
+                            </div>
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                          >
+                            <span
+                              class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
+                              >Available</span
+                            >
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500"
+                          >
+                            $24.99
+                          </td>
+
+                          <td
+                            class="mx-auto text-center py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500"
+                          >
+                            2
+                          </td>
+
+                          <td
+                            class="px-6 py-4 whitespace-no-wrap text-center border-b border-gray-200 text-sm leading-5 font-medium"
+                          >
+                            <a
+                              href="#"
+                              class="text-indigo-600 hover:text-indigo-900"
+                              >Edit</a
+                            >
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
