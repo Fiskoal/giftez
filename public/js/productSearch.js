@@ -1,9 +1,19 @@
-//TODO: get fetch request here; dont want the actual fetch request done here, do fetch request server-side
+const requestHandler = require("../../utils/fetchProduct")
 
 document.querySelector("#productSearchForm").addEventListener("submit", function(e){
   e.preventDefault();
 
   let searchQuery = document.querySelector("#productSearchInput").value.trim();
 
+  requestHandler(searchQuery);
   
-})
+});
+
+
+// BELOW IS TEST FUNCTION, EVERYTHING WORKS AS IS :)
+// function testFunction () {
+//   requestHandler("socks")
+// };
+// testFunction();
+
+// console.log(requestHandler)
