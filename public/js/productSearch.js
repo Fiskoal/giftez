@@ -1,19 +1,8 @@
-const requestHandler = require("../../utils/fetchProduct")
-
-document.querySelector("#productSearchForm").addEventListener("submit", function(e){
+// redirect to search results
+document.querySelector("#productSearchForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  let searchQuery = document.querySelector("#productSearchInput").value.trim();
+  const searchQuery = document.querySelector("#productSearchInput").value.trim();
 
-  requestHandler(searchQuery);
-  
+  document.location.replace(`/search/${searchQuery}`);
 });
-
-
-// BELOW IS HARD-CODED TEST FUNCTION, EVERYTHING WORKS AS IS :)
-// function testFunction () {
-//   requestHandler("socks")
-// };
-// testFunction();
-
-// console.log(requestHandler)

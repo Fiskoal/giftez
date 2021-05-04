@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Wishlist, Product } = require('../models');
 const withAuth = require('../utils/auth');
+const axios = require('axios');
 
 router.get('/', async (req, res) => {
   try {
@@ -107,6 +108,32 @@ router.get('/search', async (req, res) => {
     res.render('search', {
       logged_in: req.session.logged_in,
     })
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/search/:id', async (req, res) => {
+  try {
+
+    const params = {
+      api_key: "D20D90E9917D418AA166FEB5285C9F85",
+      type: "search",
+      amazon_domain: "amazon.com",
+      search_term: req.params.id,
+    }
+    axios.get('https://api.rainforestapi.com/request', { params })
+    .then(response => {
+      const results = JSON.stringify(response.data);
+      res.render('searchResults', {
+        ...results,
+        logged_in: req.session.logged_in,
+      })
+    })
+    .catch(error => {
+      res.status(500).json(error)
+    })
+
   } catch (err) {
     res.status(500).json(err);
   }
