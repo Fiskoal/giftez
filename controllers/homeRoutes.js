@@ -3,30 +3,15 @@ const { User, Wishlist, Product } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-  console.log('========================================');
-  console.log("reached router.get('/')");
-  console.log('========================================');
   try {
-    console.log('========================================');
-    console.log('we have at least tried to load index');
-    console.log('========================================');
     res.render('homePage');
   } catch (err) {
-    console.log('========================================');
-    console.log('Error!', err);
-    console.log('========================================');
     res.status(500).json(err);
   }
 });
 
-// router.get('/', (req, res) => {
-//   console.log("reached synchronous router.get(/)===============================================")
-//   res.render('home');
-// });
-
 router.get('/wishlist/:id', async (req, res) => {
   try {
-    console.log('made it in wishlist BRUH');
     //!!! DONT TOUCH THIS
     const checkProduct = await Product.findAll({
       where: {
@@ -113,6 +98,8 @@ router.get('/user/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/search')
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
