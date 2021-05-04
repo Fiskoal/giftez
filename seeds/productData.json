@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "wishlist_id": 1,
+    "name": "Test Product",
+    "amazon_link": "https://amazon.com",
+    "image_link": "https://picsum.photos/200",
+    "quantity": 1
+  }
+]

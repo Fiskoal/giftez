@@ -12,3 +12,5 @@ const logout = async () => {
 };
 
 document.querySelector('#logout').addEventListener('click', logout);
+
+// TODO: CHECK ROUTES AND ID TAGS, MAKE SURE THEY STILL MATCH
