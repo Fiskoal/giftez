@@ -16,16 +16,15 @@
   </head>
 
   <body
-    class="h-screen overflow-hidden flex items-center justify-center dark:bg-gray-900"
-    style="background: #e4f1ff"
+    class="mode-dark h-screen overflow-hidden flex items-center justify-center dark:bg-gray-900"
   >
-    <div class="w-full">
+    <div class="w-full dark:bg-gray-900">
       <script
         src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
         defer
       ></script>
 
-      <div class="flex h-screen bg-gray-200">
+      <div class="flex h-screen bg-gray-200 dark:bg-gray-900">
         <!-- <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
                 class="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
                 <div class="flex items-center justify-center mt-8">
@@ -183,7 +182,7 @@
                   <div class="inline-flex rounded-md shadow">
                     <a
                       href="#"
-                      class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+                      class="dark:bg-gray-600 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
                     >
                       List Name 1
                     </a>
