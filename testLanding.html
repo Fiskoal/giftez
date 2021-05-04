@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GiftEZ</title>
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="bg-gray-300 " style="font-family:Georgia, 'Times New Roman', Times, serif;">
+<!--Nav Bar -->
+	<nav>
+		<div class="container mx-auto px-6 py-2 flex justify-between items-center">
+		  <a class="font-bold text-2xl lg:text-4xl" href="#">
+			GiftEZ
+		  </a>
+		  <div class="block lg:hidden">
+			<button class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
+			  <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+				<title>Menu</title>
+				<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+			  </svg>
+			</button>
+		  </div>
+		  <div class="hidden lg:block">
+			<ul class="inline-flex">
+			  <li><a class="px-4 font-bold" href="/">Sign In</a></li>
+			  <li><a class="px-4 hover:text-gray-800" href="#">About</a></li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+<!-- Hero Section -->
+	  <div class="py-20" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)"
+>
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-2 text-white">
+      GiftEZ
+    </h2>
+    <h3 class="text-2xl mb-8 text-gray-200">
+      Create a personalized online gift registry using Amazon.  Share with friends and family through email.
+    </h3>
+
+    <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
+      Sign Up
+    </button>
+  </div>
+</div>
+<!--Sign up form -->
+
+<div class="h-screen flex items-center justify-center">
+	<form class="w-full md:w-1/3 bg-white rounded-lg items-center">
+		<div class="flex font-bold justify-center mt-6">
+		   <img class="h-24 w-24 " src="/public/images/Antique White Analog Moodboard Home Lifestyle Logo.png">
+		</div>
+		<h2 class="text-3xl text-center text-gray-700 mb-4 mt-4">Get Started Now!</h2>
+		<div class="px-12 pb-10">
+			<div class="w-full mb-2">
+			   <div class="flex justify-center">
+				  <input type='text' placeholder="Username"
+					 class="px-8  w-full border rounded py-2 text-gray-700 focus:outline-none items-center" />
+			   </div>
+			</div>
+			<div class="w-full mb-2">
+				<div class="flex justify-center">
+				   <input type='text' placeholder="First Name"
+					  class="px-8  w-full border rounded py-2 text-gray-700 focus:outline-none items-center" />
+				</div>
+			 </div>
+			 <div class="w-full mb-2">
+				<div class="flex justify-center">
+				   <input type='text' placeholder="Last Name"
+					  class="px-8  w-full border rounded py-2 text-gray-700 focus:outline-none items-center" />
+				</div>
+			 </div>
+			 <div class="w-full mb-2">
+				<div class="flex justify-center">
+				   <input type='email' placeholder="Email"
+					  class="px-8  w-full border rounded py-2 text-gray-700 focus:outline-none items-center" />
+				</div>
+			 </div>
+			<div class="w-full mb-2">
+			<div class="flex justify-center">   
+			   <input type='password' placeholder="Password"
+				  class="px-8 w-full border rounded py-2 text-gray-700 focus:outline-none" />
+			</div>
+			<button type="submit"
+   class="w-full mt-6 py-2  rounded bg-blue-500 text-gray-100  focus:outline-none ">Get Started!</button>
+</form>
+   <a href="#" class="text-sm text-opacity-100 float-right mt-6 mb-4 hover:text-blue-600 underline">Forgot Password?</a>
+<a href="#" class="text-sm text-opacity-100 float-left mt-6 mb-8 hover:text-blue-600 underline">Create Account</a>
+</div>
+</div>
+</div>
+
+
+
+<!--Features Section
+<section class="container mx-auto px-6 p-10">
+	<h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
+	  Features
+	</h2>
+	<div class="flex items-center flex-wrap mb-20">
+	  <div class="w-full md:w-1/2">
+		<h4 class="text-3xl text-gray-800 font-bold mb-3">Personalized Gift Registries</h4>
+		<p class="text-gray-600 mb-8">Create different registries for different occasions.  Create different registries for the same occasion but different lists for different people you share it with.</p>
+	  </div>
+	  <div class="w-full md:w-1/2">
+		<img src="/public/images/Green Leaves Organic and Feminine Restaurant Logo (1).png" alt="placeholder" />
+	  </div>
+	</div>
+  
+	<div class="flex items-center flex-wrap mb-20">
+	  <div class="w-full md:w-1/2">
+		<img src="https://picsum.photos/200/300?grayscale" alt="placeholder" />
+	  </div>
+	  <div class="w-full md:w-1/2 pl-10">
+		<h4 class="text-3xl text-gray-800 font-bold mb-3">Share with Friends and Family</h4>
+		<p class="text-gray-600 mb-8">With GiftEZ you can share your personalized registries with friends and family by creating an email list.</p>
+	  </div>
+	</div>
+  
+	<div class="flex items-center flex-wrap mb-20">
+	  <div class="w-full md:w-1/2">
+		<h4 class="text-3xl text-gray-800 font-bold mb-3">Edit Your Lists</h4>
+		<p class="text-gray-600 mb-8">When you create a profile you'll be able to add, edit and delete items from your registry anytime you want.</p>
+	  </div>
+	  <div class="w-full md:w-1/2">
+		<img src="https://picsum.photos/seed/picsum/200/300" alt="placeholder" />
+	  </div>
+	</div>
+  </section> -->
+<!-- Footer -->
+  <footer class="bg-gray-100">
+	<div class="container mx-auto px-6 pt-10 pb-6">
+	  <div class="flex flex-wrap">
+		
+	
+		<div class="w-full md:w-1/4 text-center md:text-left">
+		  <h5 class="uppercase mb-6 font-bold">GiftEZ</h5>
+		  <ul class="mb-4">
+						<li class="mt-2">
+			  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">About Us</a>
+			</li>
+			<li class="mt-2">
+			  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Contact</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</div>
+  </footer>
+
+</body>
+</html>
