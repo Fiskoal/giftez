@@ -1,0 +1,11 @@
+<div class="text-center">
+  <h2>{{name}}</h2>
+  <p>{{description}}</p>
+  <p>Created by {{user.username}}</p>
+  {{#if products}}
+  <p>Products:</p>
+  {{#each products}}
+  <p>{{this.name}} | Qty: {{this.quantity}}</p>
+  {{/each}}
+  {{/if}}
+</div>

@@ -1,48 +1,61 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { User, Wishlist, Product } = require('../models');
 const withAuth = require('../utils/auth');
+const axios = require('axios');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      projects, 
-      logged_in: req.session.logged_in 
+    res.render('homePage', {
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/wishlist/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+    //!!! DONT TOUCH THIS
+    const checkProduct = await Product.findAll({
+      where: {
+        wishlist_id: req.params.id,
+      },
     });
 
-    const project = projectData.get({ plain: true });
+    let wishlistData;
 
-    res.render('project', {
-      ...project,
-      logged_in: req.session.logged_in
+    if (checkProduct.length > 0) {
+      wishlistData = await Wishlist.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['username'],
+          },
+          {
+            model: Product,
+            where: {
+              wishlist_id: req.params.id,
+            },
+          },
+        ],
+      });
+    } else {
+      wishlistData = await Wishlist.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['username'],
+          },
+        ],
+      });
+    }
+    //!!! END OF DONT TOUCH
+
+    const wishlist = wishlistData.get({ plain: true });
+
+    res.render('wishlist', {
+      ...wishlist,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -55,15 +68,70 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Wishlist }],
     });
 
     const user = userData.get({ plain: true });
 
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: true,
     });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/user/:id', async (req, res) => {
+  try {
+    const userData = await User.findAll({
+      attributes: { exclude: ['password', 'email'] },
+      include: [{ model: Wishlist }],
+      where: {
+        username: req.params.id,
+      },
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('profile', {
+      ...user,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/search', async (req, res) => {
+  try {
+    res.render('search', {
+      logged_in: req.session.logged_in,
+    })
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/search/:id', async (req, res) => {
+  try {
+    const params = {
+      api_key: "D20D90E9917D418AA166FEB5285C9F85",
+      type: "search",
+      amazon_domain: "amazon.com",
+      search_term: req.params.id,
+    }
+    axios.get('https://api.rainforestapi.com/request', { params })
+    .then(response => {
+      const results = JSON.stringify(response.data);
+      res.render('searchResults', {
+        ...results,
+        logged_in: req.session.logged_in,
+      })
+    })
+    .catch(error => {
+      res.status(500).json(error)
+    })
   } catch (err) {
     res.status(500).json(err);
   }
