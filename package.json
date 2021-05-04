@@ -23,7 +23,6 @@
     "mysql2": "^2.2.5",
     "nodemailer": "^6.6.0",
     "postcss-cli": "^8.3.1",
-    "restify": "^8.5.1",
     "sequelize": "^6.3.5",
     "smtp-connection": "^4.0.2",
     "smtp-server": "^3.8.0"
