@@ -3,28 +3,40 @@ const { User, Wishlist, Product } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
+  console.log('========================================');
+  console.log("reached router.get('/')");
+  console.log('========================================');
   try {
-    res.render('homepage', {
-      logged_in: req.session.logged_in 
-    });
+    console.log('========================================');
+    console.log('we have at least tried to load index');
+    console.log('========================================');
+    res.render('homePage');
   } catch (err) {
+    console.log('========================================');
+    console.log('Error!', err);
+    console.log('========================================');
     res.status(500).json(err);
   }
 });
 
+// router.get('/', (req, res) => {
+//   console.log("reached synchronous router.get(/)===============================================")
+//   res.render('home');
+// });
+
 router.get('/wishlist/:id', async (req, res) => {
   try {
-
-    //!!! DONT TOUCH THIS I SWEAR
+    console.log('made it in wishlist BRUH');
+    //!!! DONT TOUCH THIS
     const checkProduct = await Product.findAll({
       where: {
-        wishlist_id: req.params.id
-      }
+        wishlist_id: req.params.id,
+      },
     });
 
     let wishlistData;
 
-    if(checkProduct.length > 0) {
+    if (checkProduct.length > 0) {
       wishlistData = await Wishlist.findByPk(req.params.id, {
         include: [
           {
@@ -34,8 +46,8 @@ router.get('/wishlist/:id', async (req, res) => {
           {
             model: Product,
             where: {
-              wishlist_id: req.params.id
-            }
+              wishlist_id: req.params.id,
+            },
           },
         ],
       });
@@ -49,13 +61,13 @@ router.get('/wishlist/:id', async (req, res) => {
         ],
       });
     }
-    //!!! END OF DONT TOUCH I SWEAR
+    //!!! END OF DONT TOUCH
 
     const wishlist = wishlistData.get({ plain: true });
 
     res.render('wishlist', {
       ...wishlist,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -75,7 +87,27 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/user/:id', async (req, res) => {
+  try {
+    const userData = await User.findAll({
+      attributes: { exclude: ['password', 'email'] },
+      include: [{ model: Wishlist }],
+      where: {
+        username: req.params.id,
+      },
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('profile', {
+      ...user,
     });
   } catch (err) {
     res.status(500).json(err);

@@ -10,7 +10,7 @@ document.querySelector("#productSearchForm").addEventListener("submit", function
 });
 
 
-// BELOW IS TEST FUNCTION, EVERYTHING WORKS AS IS :)
+// BELOW IS HARD-CODED TEST FUNCTION, EVERYTHING WORKS AS IS :)
 // function testFunction () {
 //   requestHandler("socks")
 // };
