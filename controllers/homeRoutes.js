@@ -115,7 +115,6 @@ router.get('/search', async (req, res) => {
 
 router.get('/search/:id', async (req, res) => {
   try {
-
     const params = {
       api_key: "D20D90E9917D418AA166FEB5285C9F85",
       type: "search",
@@ -133,7 +132,6 @@ router.get('/search/:id', async (req, res) => {
     .catch(error => {
       res.status(500).json(error)
     })
-
   } catch (err) {
     res.status(500).json(err);
   }
