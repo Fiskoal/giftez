@@ -1,16 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GiftEZ</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link href="/css/tailwind.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<body class="bg-gray-300 " style="font-family:Georgia, 'Times New Roman', Times, serif;">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
-<body>
-  {{{ body }}}
+<!--Nav Bar -->
+	<nav>
+		<div class="container mx-auto px-6 py-2 flex justify-between items-center">
+		  <a class="font-bold text-2xl lg:text-4xl" href="#">
+			GiftEZ
+		  </a>
+		  <div class="block lg:hidden">
+			<button class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none" type="button" onclick="toggleNavbar">
+			  <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+				<title>Menu</title>
+				<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+			  </svg>
+			</button>
+		  </div>
+		  <div class="hidden lg:block">
+			<ul class="inline-flex">
+			  <li><a class="px-4 font-bold" href="/">Sign In</a></li>
+			  <li><a class="px-4 hover:text-gray-800" href="#">About</a></li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+
+{{{body}}}
+
+
+<!-- Footer -->
+
+  <footer class="bg-gray-100">
+	<div class="container mx-auto px-6 pt-10 pb-6">
+	  <div class="flex flex-wrap">
+		
+	
+		<div class="w-full md:w-1/4 text-center md:text-left">
+		  <h5 class="uppercase mb-6 font-bold">GiftEZ</h5>
+		  <ul class="mb-4">
+						<li class="mt-2">
+			  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">About Us</a>
+			</li>
+			<li class="mt-2">
+			  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Contact</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</div>
+  </footer>
+<script src="/js/theme.js"></script>
+<script src="/js/login.js"></script>
+<script src="/js/logout.js"></script>
+<script src="/js/productSearch.js"></script>
+<script src="/js/profile.js"></script>
+<script src="/js/navbar.js"></script>
 </body>
-
 </html>

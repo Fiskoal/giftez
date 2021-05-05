@@ -4,11 +4,9 @@ document.getElementById('switchTheme').addEventListener('click', function () {
   if (localStorage.theme == 'dark') {
     htmlClasses.remove('dark');
     localStorage.removeItem('theme');
-    console.log('Light');
   } else {
     htmlClasses.add('dark');
     localStorage.theme = 'dark';
-    console.log('Dark');
   }
 });
 
@@ -18,7 +16,6 @@ if (
     window.matchMedia('(prefers-color-scheme: dark)').matches)
 ) {
   document.querySelector('html').classList.add('dark');
-  
 } else if (localStorage.theme === 'dark') {
   document.querySelector('html').classList.add('dark');
 }
