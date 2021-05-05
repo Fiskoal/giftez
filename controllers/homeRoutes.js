@@ -5,7 +5,7 @@ const axios = require('axios');
 
 router.get('/', async (req, res) => {
   try {
-    res.render('homePage', {
+    res.render('homepage', {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
