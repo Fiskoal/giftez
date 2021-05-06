@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
   <title>GiftEZ</title>
-  <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700" rel="stylesheet" />
+  <link rel="stylesheet" href="./public/css/tailwind.css">
+  <link rel="stylesheet" href="./public/css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link href="./public/images/favicon.ico" rel="icon" type="image/x-icon" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body class="bg-gray-300 " style="font-family:Georgia, 'Times New Roman', Times, serif;">
+<body class="bg-gray-300 dark:bg-gray-700" style="font-family:Georgia, 'Times New Roman', Times, serif;">
 <!--Nav Bar -->
 	<nav>
 		<div class="container mx-auto px-6 py-2 flex justify-between items-center">
-		  <a class="font-bold text-2xl lg:text-4xl" href="#">
+		  <a class="font-bold text-2xl lg:text-4xl dark:text-gray-200 filter drop-shadow-lg" href="#">
 			GiftEZ
 		  </a>
 		  <div class="block lg:hidden">
@@ -23,24 +26,42 @@
 		  </div>
 		  <div class="hidden lg:block">
 			<ul class="inline-flex">
-			  <li><a class="px-4 font-bold" href="/">Sign In</a></li>
-			  <li><a class="px-4 hover:text-gray-800" href="#">About</a></li>
+			  <li><a class="px-4 font-bold dark:text-gray-200" href="/">Sign In</a></li>
+			  <li><a class="px-4 hover:text-gray-800 dark:text-gray-200" href="#">About</a></li>
 			</ul>
+			<div class="inline-block">
+                  <label
+                    for="switchTheme"
+                    class="flex items-center cursor-pointer"
+                  >
+                    <div class="relative">
+                      <input type="checkbox" id="switchTheme" class="sr-only" />
+                      <div
+                        class="block bg-gray-600 w-8 h-4 rounded-full dark:bg-gray-200"
+                      ></div>
+                      <div
+                        class="dot absolute left-1 top-1 bg-white w-2 h-2 rounded-full transition dark:bg-indigo-700"
+                      ></div>
+                    </div>
+                    <div class="ml-2 text-gray-700 font-medium dark:text-gray-200">
+                      Darkmode
+                    </div>
+                  </label>
+                </div>
 		  </div>
 		</div>
 	  </nav>
 <!-- Hero Section -->
-	  <div class="py-20" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)"
->
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold mb-2 text-white">
+	  <div class="py-20" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)">
+  <div class="container mx-auto px-6 ">
+    <h2 class="text-4xl font-bold mb-2 text-white filter drop-shadow-lg">
       GiftEZ
     </h2>
-    <h3 class="text-2xl mb-8 text-gray-200">
+    <h3 class="text-2xl mb-8 text-white filter drop-shadow-lg">
       Create a personalized online gift registry using Amazon.  Share with friends and family through email.
     </h3>
 
-    <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
+    <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:bg-indigo-200 dark:hover:bg-indigo-700 dark:hover:text-indigo-100 dark:bg-indigo-600 dark:text-indigo-100">
       Sign Up
     </button>
   </div>
@@ -48,46 +69,46 @@
 
 <!--Sign up form -->
 <div class="h-screen flex items-center justify-center">
-	<form class="w-full md:w-1/3 bg-white rounded-lg items-center">
+	<form class="w-full md:w-1/3 bg-white rounded-lg items-center dark:bg-gray-600 shadow-2xl dark:shadow-2xl">
 		<div class="flex font-bold justify-center mt-6">
 		   <img class="h-24 w-24 " src="/public/images/logo.png">
 		</div>
-		<h2 class="text-3xl text-center text-gray-700 mb-4 mt-4">Get Started Now!</h2>
+		<h2 class="text-3xl text-center text-indigo-500 mb-4 mt-4 dark:text-indigo-200">Get Started Now!</h2>
 		<div class="px-12 pb-10">
 			<div class="w-full mb-2">
 			   <div class="flex justify-center">
 				  <input type='text' placeholder="Username"
-					 class="px-8  w-full border rounded py-2 text-gray-700 focus:outline-none items-center" />
+					 class="px-8  w-full border rounded py-2 text-gray-700 focus:outline-none items-center dark:bg-gray-200 dark:text-gray-900 shadow-inner dark:shadow-inner" />
 			   </div>
 			</div>
 			<div class="w-full mb-2">
 				<div class="flex justify-center">
 				   <input type='text' placeholder="First Name"
-					  class="px-8  w-full border rounded py-2 text-gray-700 focus:outline-none items-center" />
+					  class="px-8  w-full border rounded py-2 text-gray-700 focus:outline-none items-center dark:bg-gray-200 dark:text-gray-900 shadow-inner dark:shadow-inner" />
 				</div>
 			 </div>
 			 <div class="w-full mb-2">
 				<div class="flex justify-center">
 				   <input type='text' placeholder="Last Name"
-					  class="px-8  w-full border rounded py-2 text-gray-700 focus:outline-none items-center" />
+					  class="px-8  w-full border rounded py-2 text-gray-700 focus:outline-none items-center dark:bg-gray-200 dark:text-gray-900 shadow-inner" />
 				</div>
 			 </div>
 			 <div class="w-full mb-2">
 				<div class="flex justify-center">
 				   <input type='email' placeholder="Email"
-					  class="px-8  w-full border rounded py-2 text-gray-700 focus:outline-none items-center" />
+					  class="px-8  w-full border rounded py-2 text-gray-700 focus:outline-none items-center dark:bg-gray-200 dark:text-gray-900 shadow-inner" />
 				</div>
 			 </div>
 			<div class="w-full mb-2">
 			<div class="flex justify-center">   
 			   <input type='password' placeholder="Password"
-				  class="px-8 w-full border rounded py-2 text-gray-700 focus:outline-none" />
+				  class="px-8 w-full border rounded py-2 text-gray-700 focus:outline-none dark:bg-gray-200 dark:text-gray-900 shadow-inner" />
 			</div>
 			<button type="submit"
-   class="w-full mt-6 py-2  rounded bg-blue-500 text-gray-100  focus:outline-none ">Get Started!</button>
+   class="w-full mt-6 py-2 rounded bg-indigo-500 text-gray-100  focus:outline-none dark:bg-indigo-500">Get Started!</button>
 </form>
-   <a href="#" class="text-sm text-opacity-100 float-right mt-6 mb-4 hover:text-blue-600 underline">Forgot Password?</a>
-<a href="#" class="text-sm text-opacity-100 float-left mt-6 mb-8 hover:text-blue-600 underline">Create Account</a>
+   <a href="#" class="text-sm text-opacity-100 float-right mt-6 mb-4 text-indigo-700 dark:text-indigo-200">Forgot Password?</a>
+<a href="#" class="text-sm text-opacity-100 float-left mt-6 mb-8 text-indigo-700 dark:text-indigo-200">Create Account</a>
 </div>
 </div>
 </div>
@@ -130,25 +151,25 @@
 	</div>
   </section> -->
 <!-- Footer -->
-  <footer class="bg-gray-100">
+  <footer class="bg-gray-100 dark:bg-gray-500">
 	<div class="container mx-auto px-6 pt-10 pb-6">
 	  <div class="flex flex-wrap">
 		
 	
 		<div class="w-full md:w-1/4 text-center md:text-left">
-		  <h5 class="uppercase mb-6 font-bold">GiftEZ</h5>
+		  <h5 class="uppercase mb-6 font-bold text-indigo-500 dark:text-indigo-300">GiftEZ</h5>
 		  <ul class="mb-4">
-						<li class="mt-2">
-			  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">About Us</a>
+						<li class="mt-2"></li>
+			  <a href="#" class="hover:underline text-gray-600 dark:text-gray-100">About Us</a>
 			</li>
 			<li class="mt-2">
-			  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Contact</a>
+			  <a href="#" class="hover:underline text-gray-600 dark:text-gray-100">Contact</a>
 			</li>
 		  </ul>
 		</div>
 	  </div>
 	</div>
   </footer>
-
+<script src="./public/js/theme.js"></script>
 </body>
 </html>
