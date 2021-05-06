@@ -36,21 +36,43 @@ const signupFormHandler = async (event) => {
   if (username && firstName && lastName && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ first_name: firstName, last_name: lastName, username, email, password }),
+      body: JSON.stringify({
+        first_name: firstName,
+        last_name: lastName,
+        username,
+        email,
+        password,
+      }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      emailHandler(email);
     } else {
       alert(response.statusText);
     }
   }
 };
 
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+const emailHandler = async (data) => {
+  const sendEmail = fetch('/api/users/email', {
+    method: 'POST',
+    body: JSON.stringify({ email: data }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if(sendEmail.ok){
+    document.location.replace('/profile')
+  } else {
+    document.location.replace('/profile')
+  };
+};
+
+
+
+// document
+//   .querySelector('.login-form')
+//   .addEventListener('submit', loginFormHandler);
 
 document
   .querySelector('.signup-form')

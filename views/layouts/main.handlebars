@@ -83,10 +83,13 @@
 	</div>
   </footer>
 <script src="/js/theme.js"></script>
-<script src="/js/login.js"></script>
-<script src="/js/logout.js"></script>
-<script src="/js/productSearch.js"></script>
-<script src="/js/profile.js"></script>
 <script src="/js/navbar.js"></script>
+{{#if logged_in}}
+<h1>LOGGED IN</h1>
+<script src="/js/logout.js"></script>
+{{else}}
+<h1>NOT LOGGED IN</h1>
+<script src="/js/login.js"></script>
+{{/if}}
 </body>
 </html>

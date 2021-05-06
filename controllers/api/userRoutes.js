@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const sendEmail = require('../../utils/email');
 
 router.post('/', async (req, res) => {
   try {
@@ -11,6 +12,23 @@ router.post('/', async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post('/email', async (req, res) => {
+  console.log("================================")
+  console.log("got inside email post")
+  console.log("================================")
+  try {
+    console.log("================================")
+    console.log("got inside email try")
+    console.log("================================")
+    sendEmail(req.body.email);
+  } catch (err) {
+    console.log("================================")
+    console.log("got inside email error")
+    console.log("================================")
     res.status(400).json(err);
   }
 });
