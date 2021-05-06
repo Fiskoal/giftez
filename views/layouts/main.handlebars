@@ -35,8 +35,14 @@
 		  </div>
 		  <div class="hidden lg:block">
 			<ul class="inline-flex">
+        {{#unless logged_in}}
 			  <li><a class="px-4 font-bold dark:text-gray-200" href="/login">Sign In</a></li>
-			  <li><a class="px-4 hover:text-gray-800 dark:text-gray-200" href="/about">About</a></li>
+        {{/unless}}
+        {{#if logged_in}}
+        <li><a class="px-4 font-bold dark:text-gray-200" href="/profile">Dashboard</a></li>
+        <li><a class="px-4 font-bold dark:text-gray-200" href="/">Logout</a></li>
+        {{/if}}
+			  <li><a class="px-4 font-bold dark:text-gray-200" href="/about">About</a></li>
 			</ul>
       <!-- Darkmode Button -->
       <div class="inline-block">
@@ -104,10 +110,8 @@
 <script src="/js/navbar.js"></script>
 <script src="/js/cookies.js"></script>
 {{#if logged_in}}
-<h1>LOGGED IN</h1>
 <script src="/js/logout.js"></script>
 {{else}}
-<h1>NOT LOGGED IN</h1>
 <script src="/js/login.js"></script>
 {{/if}}
 </body>
