@@ -21,15 +21,21 @@
 
 <!--Nav Bar -->
 	<nav>
-		<div class="container mx-auto px-6 py-2 flex justify-between items-center transition-fade">
-		  <a class="font-bold text-2xl lg:text-4xl dark:text-gray-200 filer drop-shadow-lg" href="/">
+		<div class="container mx-auto px-6 py-2 flex justify-between items-center transition-fade shadow-xl">
+		  <a class="font-bold text-2xl lg:text-4xl dark:text-gray-200 filter drop-shadow-lg" href="/">
 			GiftEZ
 		  </a>
 		  
 		  <div class="navbarMenu hidden lg:block">
 			<ul class="inline-flex">
+        {{#unless logged_in}}
 			  <li><a class="px-4 font-bold dark:text-gray-200" href="/login">Sign In</a></li>
-			  <li><a class="px-4 hover:text-gray-800 dark:text-gray-200" href="/about">About</a></li>
+        {{/unless}}
+        {{#if logged_in}}
+        <li><a class="px-4 font-bold dark:text-gray-200" href="/profile">Dashboard</a></li>
+        <li><a class="px-4 font-bold dark:text-gray-200" id="logout" href="/">Logout</a></li>
+        {{/if}}
+			  <li><a class="px-4 font-bold dark:text-gray-200" href="/about">About</a></li>
 			</ul>
       <!-- Darkmode Button -->
       <div class="inline-block">
@@ -105,10 +111,8 @@
 <script src="/js/navbar.js"></script>
 <script src="/js/cookies.js"></script>
 {{#if logged_in}}
-<h1>LOGGED IN</h1>
 <script src="/js/logout.js"></script>
 {{else}}
-<h1>NOT LOGGED IN</h1>
 <script src="/js/login.js"></script>
 {{/if}}
 </body>
