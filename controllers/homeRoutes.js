@@ -62,10 +62,8 @@ router.get('/wishlist/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Wishlist }],
@@ -115,17 +113,26 @@ router.get('/search', async (req, res) => {
 
 router.get('/search/:id', async (req, res) => {
   try {
+    const page = req.query.page;
     const params = {
       api_key: "D20D90E9917D418AA166FEB5285C9F85",
       type: "search",
       amazon_domain: "amazon.com",
       search_term: req.params.id,
+      page: page,
     }
     axios.get('https://api.rainforestapi.com/request', { params })
     .then(response => {
-      const results = JSON.stringify(response.data);
+      const results = JSON.stringify(response.data.search_results);
+      const pages = JSON.stringify(response.data.pagination.total_pages)
+
+      const searchResults = {
+        results: results,
+        pages: pages,
+      };
+
       res.render('searchResults', {
-        ...results,
+        ...searchResults,
         logged_in: req.session.logged_in,
       })
     })
@@ -138,7 +145,6 @@ router.get('/search/:id', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
@@ -146,5 +152,15 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+router.get('/about', async (req, res) => {
+  try { 
+    res.render('about', {
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;
