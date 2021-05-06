@@ -1,3 +1,7 @@
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 header,
 .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
@@ -25,6 +29,6 @@ header,
 }
 
 input:checked ~ .dot {
-  transform: translateX(100%);
+  transform: translateX(200%);
   background-color: #a3a3a3;
 }
