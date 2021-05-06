@@ -93,3 +93,20 @@ input:checked ~ .dot {
 .hide-banner {
   display: none;
 }
+
+.transition-fade {
+  transition: 0.5s;
+  opacity: 1;
+  transform: translateX(0);
+  transform-origin: right;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+html.is-leaving .transition-fade {
+  opacity: 0;
+  transform: translateX(0);
+}

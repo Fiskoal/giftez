@@ -21,7 +21,7 @@
 
 <!--Nav Bar -->
 	<nav>
-		<div class="container mx-auto px-6 py-2 flex justify-between items-center">
+		<div class="container mx-auto px-6 py-2 flex justify-between items-center transition-fade">
 		  <a class="font-bold text-2xl lg:text-4xl dark:text-gray-200 filer drop-shadow-lg" href="/">
 			GiftEZ
 		  </a>
@@ -61,7 +61,7 @@
 		  </div>
 		</div>
     <!-- Display/Hide Cookie Banner -->
-    <div class="bg-gray-100 flex items-center justify-center px-5" x-data="showBanner()" x-init="checkCookie()" id="cookieBanner">
+    <div class="bg-gray-100 flex items-center justify-center px-5 transition-fade" x-data="showBanner()" x-init="checkCookie()" id="cookieBanner">
             <section class=" p-5 lg:px-24 absolute top-0 bg-gray-600" id="" x-show="show">
             <div class="md:flex items-center -mx-3">
                 <div class="md:flex-1 px-3 mb-5 md:mb-0">
@@ -79,7 +79,7 @@
 {{{body}}}
 
 <!-- Footer -->
-  <footer class="bg-gray-100 dark:bg-gray-500">
+  <footer class="bg-gray-100 dark:bg-gray-500 transition-fade">
 	<div class="container mx-auto px-6 pt-10 pb-6">
 	  <div class="flex flex-wrap">
 		<div class="w-full md:w-1/4 text-center md:text-left">
@@ -96,6 +96,9 @@
 	  </div>
 	</div>
   </footer>
+<!-- End of Footer -->
+
+<script src="/js/animations.js"></script>
 <script src="/js/theme.js"></script>
 <script src="/js/navbar.js"></script>
 <script src="/js/cookies.js"></script>
