@@ -1,5 +1,5 @@
 let toggleBtn = document.querySelector('.toggleNavbar');
-let navbar = document.querySelector('#navbar');
+let navbar = document.querySelector('.navbarMenu');
 
 toggleBtn.addEventListener('click', (e) => {
   navbar.classList.toggle('hidden');
