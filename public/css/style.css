@@ -89,3 +89,7 @@ input:checked ~ .dot {
   transform: translateX(200%);
   background-color: #a3a3a3;
 }
+
+.hide-banner {
+  display: none;
+}
