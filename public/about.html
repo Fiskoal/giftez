@@ -10,6 +10,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="bg-gray-300 dark:bg-gray-700" style="font-family:Georgia, 'Times New Roman', Times, serif;">
+<!--Alert-->
+
+<!-- component -->
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+
+
+<!--END ALERT-->
 <!--Nav Bar -->
 	<nav>
 		<div class="container mx-auto px-6 py-2 flex justify-between items-center">
@@ -50,13 +57,25 @@
                 </div>
 		  </div>
 		</div>
+        <div class="bg-gray-100 flex items-center justify-center px-5" x-data="{showCookieBanner:true}">
+            <section class=" p-5 lg:px-24 absolute top-0 bg-gray-600" id="cookieBanner" x-show="showCookieBanner">
+            <div class="md:flex items-center -mx-3">
+                <div class="md:flex-1 px-3 mb-5 md:mb-0">
+                    <p class="text-center md:text-left text-white text-s leading-tight md:pr-12">We use cookies to improve user experience, and analyze website traffic. For these reasons, we may share your site usage data with our analytics partners.  By clicking “Accept Cookies”, you consent to store on your device all the technologies used in this application.</p>
+                </div>
+                <div class="px-3 text-center">
+                    <button id="accept-cookies" class="py-2 px-8 bg-indigo-500 hover:bg-indigo-400 text-white rounded font-bold text-sm shadow-xl" @click.prevent="showCookieBanner=!showCookieBanner">Accept Cookies</button>
+                </div>
+            </div>
+            </section>
+        </div>
 	  </nav>
 <!-- Terminal Section -->
 <div class="h-screen w-1/2 mx-auto">
     <div class="py-16"></div>
   <div class="w-full shadow-2xl subpixel-antialiased rounded h-64 bg-black border-black mx-auto">
     <div class="flex items-center h-6 rounded-t bg-gray-100 border-b border-gray-500 text-center text-black dark:bg-indigo-600 dark:border-indigo-500">
-      <div class="flex ml-2 items-center text-center border-red-900 bg-red-500 shadow-inner rounded-full w-3 h-3" id="closebtn">
+      <div class="flex ml-2 items-center text-center border-red-900 bg-red-500 shadow-inner rounded-full w-3 h-3">
       </div>
       <div class="ml-2 border-yellow-900 bg-yellow-500 shadow-inner rounded-full w-3 h-3">
       </div>
@@ -113,5 +132,6 @@
 	</div>
   </footer>
 <script src="../public/js/theme.js"></script>
+<script src="../public/js/cookies.js"></script>
 </body>
 </html>
