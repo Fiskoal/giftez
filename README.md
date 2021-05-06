@@ -7,7 +7,8 @@
 GiftEZ helps users create personalized wishlist and gives them the option to email them to their friends and family. 
 The user can name their Wishlist fun names to make it more inviting, but still includes a direct link the to the specific item they want to share.
 <br>
-Build using
+<br>
+Built using
 * HTML 
 * Tailwind
 * Axios
