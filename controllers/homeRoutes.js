@@ -102,46 +102,66 @@ router.get('/user/:id', async (req, res) => {
 });
 
 router.get('/search', async (req, res) => {
-  try {
-    res.render('search', {
-      logged_in: req.session.logged_in,
-    })
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+  
+  let query = req.query.query;
+  let page = req.query.page;
+  if (query) {
+    try {
 
-router.get('/search/:id', async (req, res) => {
-  try {
-    const page = req.query.page;
-    const params = {
-      api_key: "D20D90E9917D418AA166FEB5285C9F85",
-      type: "search",
-      amazon_domain: "amazon.com",
-      search_term: req.params.id,
-      page: page,
-    }
-    axios.get('https://api.rainforestapi.com/request', { params })
-    .then(response => {
-      const results = JSON.stringify(response.data.search_results);
-      const pages = JSON.stringify(response.data.pagination.total_pages)
-
-      const searchResults = {
-        results: results,
-        pages: pages,
+      if (!page) {
+        page = 1;
       };
+  
+      if (!query) {
+        document.location.replace('/search');
+      };
+  
+      const params = {
+        api_key: "D20D90E9917D418AA166FEB5285C9F85",
+        type: "search",
+        amazon_domain: "amazon.com",
+        search_term: query,
+        page: page,
+      }
+      axios.get('https://api.rainforestapi.com/request', { params })
+      .then(response => {
 
-      res.render('searchResults', {
-        ...searchResults,
+        let results = [];
+  
+        (response.data.search_results).forEach(element => {
+          results.push(element)
+        });
+  
+        console.log(results);
+
+        const pages = JSON.stringify(response.data.pagination.total_pages);
+  
+        const searchResults = {
+          results: results,
+          pages: pages,
+        };
+  
+        res.render('searchResults', {
+          ...searchResults,
+          logged_in: req.session.logged_in,
+        })
+      })
+      .catch(error => {
+        res.status(500).json(error)
+      })
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
+    try {
+      res.render('search', {
         logged_in: req.session.logged_in,
       })
-    })
-    .catch(error => {
-      res.status(500).json(error)
-    })
-  } catch (err) {
-    res.status(500).json(err);
+    } catch (err) {
+      res.status(500).json(err);
+    }
   }
+
 });
 
 router.get('/login', (req, res) => {
