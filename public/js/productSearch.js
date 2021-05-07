@@ -8,7 +8,9 @@ document
       .querySelector('.productSearchInput')
       .value.trim();
 
-    document.location.replace(`/search?query=${searchQuery}&page=1`);
+    if (searchQuery.length > 0) {
+      document.location.replace(`/search?query=${searchQuery}&page=1`);
+    }
   });
 
 /*
