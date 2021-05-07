@@ -17,26 +17,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="bg-gray-300 dark:bg-gray-700" style="font-family:Georgia, 'Times New Roman', Times, serif;">
+  <script src="/js/cookies.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  
 
 <!--Nav Bar -->
 	<nav>
 		<div class="container mx-auto px-6 py-2 flex justify-between items-center transition-fade">
-		  <a class="font-bold text-2xl lg:text-4xl dark:text-gray-200 filer drop-shadow-lg" href="/">
+		  <a class="font-bold text-2xl lg:text-4xl dark:text-gray-200 filter drop-shadow-lg" href="/">
 			GiftEZ
 		  </a>
-		  <div class="block lg:hidden">
-			<button class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none" type="button" onclick="toggleNavbar">
-			  <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-				<title>Menu</title>
-				<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-			  </svg>
-			</button>
-		  </div>
-		  <div class="hidden lg:block">
+		  
+		  <div class="navbarMenu hidden lg:block">
 			<ul class="inline-flex">
+        {{#unless logged_in}}
 			  <li><a class="px-4 font-bold dark:text-gray-200" href="/login">Sign In</a></li>
-			  <li><a class="px-4 hover:text-gray-800 dark:text-gray-200" href="/about">About</a></li>
+        {{/unless}}
+        {{#if logged_in}}
+        <li><a class="px-4 font-bold dark:text-gray-200" href="/profile">Dashboard</a></li>
+        <li><a class="px-4 font-bold dark:text-gray-200" id="logout" href="/">Logout</a></li>
+        {{/if}}
+			  <li><a class="px-4 font-bold dark:text-gray-200" href="/about">About</a></li>
 			</ul>
       <!-- Darkmode Button -->
       <div class="inline-block">
@@ -58,6 +59,14 @@
                     </div>
                   </label>
                 </div>
+		  </div>
+      <div class="block lg:hidden navbarBtnContainer">
+			<button class="toggleNavbar flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none" type="button">
+			  <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+				<title>Menu</title>
+				<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+			  </svg>
+			</button>
 		  </div>
 		</div>
     <!-- Display/Hide Cookie Banner -->
@@ -102,13 +111,12 @@
 <script src="/js/animations.js"></script>
 <script src="/js/theme.js"></script>
 <script src="/js/navbar.js"></script>
-<script src="/js/cookies.js"></script>
+
 {{#if logged_in}}
-<h1>LOGGED IN</h1>
 <script src="/js/logout.js"></script>
 {{else}}
-<h1>NOT LOGGED IN</h1>
 <script src="/js/login.js"></script>
+<script src="/js/signup.js"></script>
 {{/if}}
 </body>
 </html>
