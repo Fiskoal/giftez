@@ -1,13 +1,39 @@
-<h1>SEARCH RESULTS</h1>
+{{!-- <h1>SEARCH RESULTS</h1>
 
-<p>{{wishlistData}}</p>
-<p>{{logged_in}}</p>
-{{#each results}}
+
 <div class="w-full">
   <p>{{this.title}} {{this.price.raw}} {{this.price.currency}}</p>
   <img src={{this.image}}>
   <a href={{this.link}}>{{this.title}}</a>
   <p>===========================================</p>
-</div>
-{{/each}}
-{{!-- <script src="/js/productSearch.js"></script> --}}
+</div> --}}
+
+<div class="bg-white pb-4 px-4 rounded-md w-full">
+	<div class="flex justify-between w-full pt-6 ">
+    	<p class="ml-3"> Search Results</p>
+    </div>
+  
+    <div class="overflow-x-auto mt-6">
+      <table class="table-auto border-collapse w-full">
+        <thead>
+          <tr class="rounded-lg text-sm font-medium text-gray-700 text-left" style="font-size: 0.9674rem">
+            <th class="px-4 py-2 bg-gray-200 " style="background-color:#f8f8f8">Item</th>
+            <th class="px-4 py-2 " style="background-color:#f8f8f8">Image</th>
+            <th class="px-4 py-2 " style="background-color:#f8f8f8">Price</th>
+			      <th class="px-4 py-2 " style="background-color:#f8f8f8"></th>
+          </tr>
+        </thead>
+        <tbody class="text-sm font-normal text-gray-700">
+          {{#each results}}
+          <tr class="hover:bg-gray-100 border-b border-gray-200 py-10">
+            <td class="px-4 py-4"><a href={{this.link}}>{{this.title}}{{this.title}}</a></td>
+            <td class="px-4 py-4">{{this.image}}</td>
+            <td class="px-4 py-4">{{this.price.raw}} {{this.price.currency}}</td>
+            <td class="px-4 py-4">Add</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  	 <div class="w-full flex justify-center border-t border-gray-100 pt-4 items-center"></div>
+    </div>

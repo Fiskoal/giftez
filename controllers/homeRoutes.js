@@ -104,13 +104,12 @@ router.get('/user/:id', async (req, res) => {
 router.get('/search', async (req, res) => {
   let query = req.query.query;
   let page = req.query.page;
-
   let searchResults;
 
   if (!page) {
     page = 1;
   }
-
+//!!! DO NOT TOUCH
   try {
     const params = {
       api_key: 'D20D90E9917D418AA166FEB5285C9F85',
@@ -127,7 +126,6 @@ router.get('/search', async (req, res) => {
         response.data.search_results.forEach((element) => {
           results.push(element);
         });
-
 
         const pages = JSON.stringify(response.data.pagination.total_pages);
 
@@ -158,6 +156,7 @@ router.get('/search', async (req, res) => {
           });
         }
       })
+//!!! END OF DO NOT TOUCH
       .catch((error) => {
         res.status(500).json(error);
       });
