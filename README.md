@@ -21,14 +21,20 @@ Built using
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Demo](#demo)
 - [API](#API)
 - [License](#license)
+
 
 ## Installation
 npm i
 
 ## Usage
  The user creates an account by creating a username, first name, last name, email and password.  The user can then create a wishlist by naming it and adding items using the Amazon API.
+
+## Demo
+
+![demo of site](public/images/demoGiftEZ.gif)
 
 ## API:
 Amazon API : https://rainforestapi.com
