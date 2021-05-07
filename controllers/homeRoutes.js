@@ -112,7 +112,7 @@ router.get('/search', async (req, res) => {
   try {
     if (query) {
       const params = {
-        api_key: '256996DE4C204F1BBC6FEA3BF8CB8CF8',
+        api_key: '4E88E04A63FE47E28372CD52A485307C',
         type: 'search',
         amazon_domain: 'amazon.com',
         search_term: query,
