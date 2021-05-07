@@ -40,6 +40,4 @@ npm i
 Amazon API : https://rainforestapi.com
 
 ### Extra Packages to install:
-https://restify.com
-<br>
 https://nodemailer.com
