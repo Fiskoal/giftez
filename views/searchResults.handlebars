@@ -10,7 +10,7 @@
 
 <div class="bg-white pb-4 px-4 rounded-md w-full">
 	<div class="flex justify-between w-full pt-6 ">
-    	<p class="ml-3"> Search Results</p>
+    	<p class="ml-3">Search Results</p>
     </div>
   
     <div class="overflow-x-auto mt-6">
@@ -27,8 +27,8 @@
           {{#each results}}
           <tr class="hover:bg-gray-100 border-b border-gray-200 py-10">
             <td class="px-4 py-4"><a href={{this.link}}>{{this.title}}{{this.title}}</a></td>
-            <td class="px-4 py-4">{{this.image}}</td>
-            <td class="px-4 py-4">{{this.price.raw}} {{this.price.currency}}</td>
+            <td class="px-4 py-4"><img class="h-20 w-100" src="{{this.image}}"></td>
+            <td class="px-4 py-4">{{this.price.raw}}</td>
             <td class="px-4 py-4">Add</td>
           </tr>
           {{/each}}
