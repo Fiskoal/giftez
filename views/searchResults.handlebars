@@ -1,3 +1,11 @@
 <h1>SEARCH RESULTS</h1>
 
-<script src="/js/productSearch.js"></script>
+{{#each results}}
+<div class="w-full">
+  <p>{{this.title}} {{this.price.raw}} {{this.price.currency}}</p>
+  <img src={{this.image}}>
+  <a href={{this.link}}>{{this.title}}</a>
+  <p>===========================================</p>
+</div>
+{{/each}}
+{{!-- <script src="/js/productSearch.js"></script> --}}
