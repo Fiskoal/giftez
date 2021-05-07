@@ -34,6 +34,7 @@
 			  <li><a class="px-4 font-bold dark:text-gray-200" href="/login">Sign In</a></li>
         {{/unless}}
         {{#if logged_in}}
+        <li><a class="px-4 font-bold dark:text-gray-200" href="/search">Search</a></li>
         <li><a class="px-4 font-bold dark:text-gray-200" href="/profile">Dashboard</a></li>
         <li><a class="px-4 font-bold dark:text-gray-200" id="logout" href="/">Logout</a></li>
         {{/if}}
@@ -96,9 +97,6 @@
 		  <ul class="mb-4">
 						<li class="mt-2">
 			  <a href="/about" class="hover:underline text-gray-600 dark:text-gray-100">About Us</a>
-			</li>
-			<li class="mt-2">
-			  <a href="/about" class="hover:underline text-gray-600 dark:text-gray-100">Contact</a>
 			</li>
 		  </ul>
 		</div>
