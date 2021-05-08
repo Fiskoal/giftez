@@ -26,10 +26,24 @@
         <tbody class="text-sm font-normal text-gray-700">
           {{#each results}}
           <tr class="hover:bg-gray-100 border-b border-gray-200 py-10">
-            <td class="px-4 py-4"><a href={{this.link}}>{{this.title}}{{this.title}}</a></td>
+            <td class="px-4 py-4"><a href={{this.link}}>{{this.title}}</a></td>
             <td class="px-4 py-4"><img class="h-20 w-100" src="{{this.image}}"></td>
             <td class="px-4 py-4">{{this.price.raw}}</td>
-            <td class="px-4 py-4">Add</td>
+            <td class="px-4 py-4">
+              <div class="dropdown ml-3 inline-flex rounded-md shadow transition-fade">
+                <a href="#" class="drop-btn dark:bg-gray-600 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-600 dark:text-indigo-100 shadow-md dark:hover:bg-indigo-700">
+                      Add Product
+                </a>
+                <div class="outer-list">
+                  <ul>
+                    <li>List 1</li>
+                    <li>List 2</li>
+                    <li>List 3</li>
+                    <li>List 4</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
           </tr>
           {{/each}}
         </tbody>
