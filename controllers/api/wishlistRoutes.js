@@ -24,12 +24,14 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!wishlistData) {
+      console.log("404")
       res.status(404).json({ message: 'No wishlist found with this id!' });
       return;
     }
 
     res.status(200).json(wishlistData);
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });

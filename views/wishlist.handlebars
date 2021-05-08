@@ -1,1 +1,89 @@
-<h1>WISHLIST</h1>
+<div class="mt-8 flex justify-end">
+  <div class="ml-3 inline-flex rounded-md">
+    <a href="https://giftez.herokuapp.com/search" id="shareButton"
+    class="transition-fade dark:bg-gray-600 mr-3 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-700 dark:bg-indigo-600 dark:text-indigo-100 shadow-md">
+    Add Items
+    </a>
+    <a href="#" id="shareButton"
+    class="transition-fade dark:bg-gray-600 mr-3 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-700 dark:bg-indigo-600 dark:text-indigo-100 shadow-md">
+    Share List
+    </a>
+    <a href="#" id="deleteButton"
+    class="transition-fade dark:bg-gray-600 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-700 dark:bg-indigo-600 dark:text-indigo-100 shadow-md">
+    Delete List
+    </a>
+  </div>
+</div>
+
+<div class="flex flex-col mt-8 w-full">
+              <div class="py-2 overflow-x-auto w-full">
+                <div
+                  class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200 dark:border-indigo-200">
+                  <table class="min-w-full transition-fade">
+                    <thead>
+                      <tr>
+                        <th
+                          class="px-6 py-3 font-bold border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-indigo-600 uppercase tracking-wider dark:bg-gray-800 dark:text-indigo-200 dark:border-indigo-200">
+                          Image
+                        </th>
+                        <th
+                          class="px-6 py-3 font-bold border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-indigo-600 uppercase tracking-wider dark:bg-gray-800 dark:text-indigo-200 dark:border-indigo-200">
+                          Item
+                        </th>
+                        <th
+                          class="px-6 py-3 font-bold border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-indigo-600 uppercase tracking-wider dark:bg-gray-800 dark:text-indigo-200 dark:border-indigo-200">
+                          Price
+                        </th>
+                        <th
+                          class="mx-auto font-bold text-center py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-indigo-600 uppercase tracking-wider dark:bg-gray-800 dark:text-indigo-200 dark:border-indigo-200">
+                          Quantity
+                        </th>
+                        <th class="mx-auto font-bold text-center py-3 border-b border-gray-200 bg-gray-50 dark:bg-gray-800 dark:text-indigo-200 dark:border-indigo-200"></th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="bg-white dark:bg-gray-600 dark:border-indigo-200">
+                      {{#each products}}
+                      <tr>
+                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 dark:border-indigo-200">
+                          <div class="flex items-center">
+                            <div class="flex-shrink-0 h-20 w-20">
+                              <a href="{{this.amazon_link}}"
+                                target="_blank"><img class="h-20 w-100"
+                                  src="{{this.image_link}}"
+                                  alt="" /></a>
+                            </div>
+                          </div>
+                        </td>
+
+                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 dark:border-indigo-200">
+                          <div
+                            class="text-sm leading-5 text-gray-900 lg:break-all md:break-all sm:break-words xs:break-words dark:text-indigo-200">
+                            {{this.name}}
+                          </div>
+                        </td>
+
+                        <td
+                          class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500 dark:border-indigo-200 dark:text-indigo-200">
+                          ${{this.price}}
+                        </td>
+
+                        <td
+                          class="mx-auto text-center py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500 dark:border-indigo-200 dark:text-indigo-200">
+                          {{this.quantity}}
+                        </td>
+
+                        <td
+                          class="px-6 py-4 whitespace-no-wrap text-center border-b border-gray-200 text-sm leading-5 font-medium dark:border-indigo-200">
+                          <a href="#" class="productDelete text-indigo-600 dark:text-indigo-200 hover:text-indigo-900" data-id="{{this.id}}">Delete</a>
+                        </td>
+                      </tr>
+                      {{/each}}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          {{!-- <div class="py-20"></div> --}}
+
+          <script src="/js/wishlist.js"></script>

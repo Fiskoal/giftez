@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/wishlist/:id', async (req, res) => {
+router.get('/wishlists/:id', async (req, res) => {
   try {
     //!!! DONT TOUCH THIS
     const checkProduct = await Product.findAll({
@@ -71,8 +71,10 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+    console.log(user);
+
     res.render('profile', {
-      ...user,
+      user,
       logged_in: true,
     });
   } catch (err) {
@@ -112,7 +114,7 @@ router.get('/search', async (req, res) => {
   if (query) {
     const params = {
       //TODO: UPDATE API KEY 
-      api_key: '4E88E04A63FE47E28372CD52A485307C',
+      api_key: '9295C1164A6C405BBC94C5709829FFA6',
       type: 'search',
       amazon_domain: 'amazon.com',
       sort_by: "featured",
