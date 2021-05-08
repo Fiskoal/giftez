@@ -111,61 +111,59 @@ router.get('/search', async (req, res) => {
   }
   if (query) {
     const params = {
-    api_key: '4E88E04A63FE47E28372CD52A485307C',
-    type: 'search',
-    amazon_domain: 'amazon.com',
-    search_term: query,
-    page: page,
-  };
-  axios
-    .get('https://api.rainforestapi.com/request', { params })
-    .then((response) => {
-      let results = [];
+      api_key: '4E88E04A63FE47E28372CD52A485307C',
+      type: 'search',
+      amazon_domain: 'amazon.com',
+      search_term: query,
+      page: page,
+    };
+    axios
+      .get('https://api.rainforestapi.com/request', { params })
+      .then((response) => {
+        let results = [];
 
-      response.data.search_results.forEach((element) => {
-        results.push(element);
-      });
+        response.data.search_results.forEach((element) => {
+          results.push(element);
+        });
 
-      const pages = JSON.stringify(response.data.pagination.total_pages);
+        const pages = JSON.stringify(response.data.pagination.total_pages);
 
-      searchResults = {
-        results: results,
-        pages: pages,
-      };
-    })
-    .then((req, res) => {
-      if (req.session.logged_in) {
-        async (req, res) => {
+        searchResults = {
+          results: results,
+          pages: pages,
+        };
+      })
+      .then(async () => {
+        if (req.session.logged_in) {
           try {
-            const wishlistData2 = await Wishlist.findAll({
-              where: {
-                user_id: req.session.user_id,
-              },
-            });
+              const wishlistData2 = await Wishlist.findAll({
+                where: {
+                  user_id: req.session.user_id,
+                },
+              });
 
-            const wishlist2 = JSON.stringify(wishlistData2[0]);
+              const wishlist2 = JSON.stringify(wishlistData2[0]);
 
-            res.render('searchResults', {
-              ...searchResults,
-              wishlistData: wishlist2,
-              logged_in: req.session.logged_in,
-            });
+              res.render('searchResults', {
+                ...searchResults,
+                wishlistData: wishlist2,
+                logged_in: req.session.logged_in,
+              });
+            
           } catch (err) {
             res.status(500).json(err);
           }
-        };
-      } else {
-        res.render('searchResults', {
-          ...searchResults,
-          logged_in: req.session.logged_in,
-        });
-      }
-    });
-
+        } else {
+          res.render('searchResults', {
+            ...searchResults,
+            logged_in: req.session.logged_in,
+          });
+        }
+      });
   } else {
     res.render('search', {
-      logged_in: req.session.logged_in
-    })
+      logged_in: req.session.logged_in,
+    });
   }
 });
 
