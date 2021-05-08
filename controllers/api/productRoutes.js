@@ -20,7 +20,6 @@ router.delete('/:id', withAuth, async (req, res) => {
     const productData = await Product.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
@@ -32,6 +31,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
+    console.log(err)
   }
 });
 
