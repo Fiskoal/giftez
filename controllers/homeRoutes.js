@@ -111,9 +111,11 @@ router.get('/search', async (req, res) => {
   }
   if (query) {
     const params = {
+      //TODO: UPDATE API KEY 
       api_key: '4E88E04A63FE47E28372CD52A485307C',
       type: 'search',
       amazon_domain: 'amazon.com',
+      sort_by: "featured",
       search_term: query,
       page: page,
     };
@@ -142,7 +144,11 @@ router.get('/search', async (req, res) => {
                 },
               });
 
-              const wishlist2 = JSON.stringify(wishlistData2[0]);
+              
+
+              wishlist2 = wishlistData2;
+
+              console.log(wishlist2[0].dataValues.name)
 
               res.render('searchResults', {
                 ...searchResults,
