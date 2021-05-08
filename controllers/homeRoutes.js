@@ -130,6 +130,8 @@ router.get('/search', async (req, res) => {
 
         const pages = JSON.stringify(response.data.pagination.total_pages);
 
+        console.log(results);
+
         searchResults = {
           results: results,
           pages: pages,
