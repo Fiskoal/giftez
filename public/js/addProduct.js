@@ -1,4 +1,5 @@
 const items = document.getElementsByClassName('wishlistItem');
+const id = document.querySelector(".searchResults").getAttribute("data-user");
 
 for (i = 0; i < items.length; i++) {
   items[i].addEventListener('click', (e) => {
@@ -12,10 +13,11 @@ for (i = 0; i < items.length; i++) {
 
     console.log(title, link, image, price, wishlist);
 
-    const postProduct = fetch('/api/products', {
+    fetch('/api/products', {
       method: 'POST',
       body: JSON.stringify({
         wishlist_id: wishlist,
+        user_id: id,
         name: title,
         amazon_link: link,
         image_link: image,

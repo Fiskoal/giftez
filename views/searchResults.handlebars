@@ -8,25 +8,27 @@
   <p>===========================================</p>
 </div> --}}
 
-<div class="bg-white pb-4 px-4 rounded-md w-full">
-	<div class="flex justify-between w-full pt-6 ">
-    	<p class="ml-3">Search Results</p>
+<div class="bg-white pb-4 px-4 rounded-md w-full dark:bg-gray-700 dark:text-indigo-300">
+	<div class="flex justify-between w-full pt-6">
+    	<p class="ml-3 searchResults"
+       {{#if logged_in}}data-user="{{user_id}}"{{/if}}>
+       Search Results</p>
       
     </div>
   
     <div class="overflow-x-auto mt-6">
       <table class="table-auto border-collapse w-full">
         <thead>
-          <tr class="rounded-lg text-sm font-medium text-gray-700 text-left" style="font-size: 0.9674rem">
-            <th class="px-4 py-2 bg-gray-200 " style="background-color:#f8f8f8">Item</th>
-            <th class="px-4 py-2 " style="background-color:#f8f8f8">Image</th>
-            <th class="px-4 py-2 " style="background-color:#f8f8f8">Price</th>
-			      <th class="px-4 py-2 " style="background-color:#f8f8f8"></th>
+          <tr class="rounded-lg text-sm font-medium text-gray-700 dark:text-indigo-300 text-left" style="font-size: 0.9674rem">
+            <th class="px-4 py-2 bg-gray-200 dark:bg-gray-600">Item</th>
+            <th class="px-4 py-2 bg-gray-200 dark:bg-gray-600">Image</th>
+            <th class="px-4 py-2 bg-gray-200 dark:bg-gray-600">Price</th>
+			      <th class="px-4 py-2 bg-gray-200 dark:bg-gray-600"></th>
           </tr>
         </thead>
-        <tbody class="text-sm font-normal text-gray-700">
+        <tbody class="text-sm font-normal text-gray-700 dark:text-indigo-300">
           {{#each results}}
-          <tr class="hover:bg-gray-100 border-b border-gray-200 py-10">
+          <tr class="hover:bg-gray-100 border-b border-gray-200 py-10 dark:hover:bg-gray-600">
             <td class="px-4 py-4"><a href={{this.link}}>{{this.title}}</a></td>
             <td class="px-4 py-4"><img class="h-20 w-100" src="{{this.image}}"></td>
             <td class="px-4 py-4">{{this.price.raw}}</td>
