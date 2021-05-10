@@ -157,6 +157,7 @@ router.get('/search', async (req, res) => {
               res.render('searchResults', {
                 ...searchResults,
                 wishlistData: wishlist2,
+                user_id: req.session.user_id,
                 logged_in: req.session.logged_in,
               });
             

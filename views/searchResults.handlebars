@@ -10,7 +10,9 @@
 
 <div class="bg-white pb-4 px-4 rounded-md w-full dark:bg-gray-700 dark:text-indigo-300">
 	<div class="flex justify-between w-full pt-6">
-    	<p class="ml-3">Search Results</p>
+    	<p class="ml-3 searchResults"
+       {{#if logged_in}}data-user="{{user_id}}"{{/if}}>
+       Search Results</p>
       
     </div>
   
